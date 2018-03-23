@@ -5,7 +5,7 @@ def rotate(m):
     return ''.join([chr(((ord(_)-ord('A')) + s) % (ord('Z') - ord('A') + 1)+ord('A')) for _ in m])
 
 
-m = list(next(sys.stdin))
+m = list(next(sys.stdin).strip())
 
 h = len(m)/2
 
