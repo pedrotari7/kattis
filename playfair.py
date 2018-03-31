@@ -30,13 +30,11 @@ while i < len(message):
 
     a, b = cipher_dict[m[0]], cipher_dict[m[1]]
 
-
     if a[0] == b[0]:
         final += cipher[a[0]][(a[1]+1)%5] + cipher[b[0]][(b[1]+1)%5]
     elif a[1] == b[1]:
         final += cipher[(a[0]+1)%5][a[1]] + cipher[(b[0]+1)%5][b[1]]
     else:
         final += cipher[a[0]][b[1]] + cipher[b[0]][a[1]]
-    
 
 print final
