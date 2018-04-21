@@ -5,3 +5,4 @@ for line in map(str.strip, sys.stdin):
         print 'yes'
     else:
         print 'no'
+  

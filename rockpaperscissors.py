@@ -15,7 +15,7 @@ while 1:
     total = k*n*(n-1)/2
 
     for _ in xrange(total):
-        line = next(sys.stdin).split()
+        line = next(sys.stdin).strip().split()
 
         p1, m1, p2, m2 = line
 
