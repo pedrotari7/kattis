@@ -5,7 +5,6 @@ def find_start(grid):
     for r, row in enumerate(grid):
         if '*' in row:
             x,y = r, row.index('*')
-            print x,y
             if x == 0:
                 angle = 270
             elif x == len(grid)-1:
