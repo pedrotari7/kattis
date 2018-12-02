@@ -62,4 +62,4 @@ for line in sys.stdin:
         i += l
 
 
-    print final.split('_')
+    print final
