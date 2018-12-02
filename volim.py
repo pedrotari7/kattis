@@ -1,19 +1,24 @@
 import sys
 
-current_player = int(next(sys.stdin).strip())
+K = int(next(sys.stdin).strip()) - 1 
+N = int(next(sys.stdin).strip())
 
-N = next(sys.stdin)
+players = [1, 2, 3, 4, 5, 6, 7, 8]
 
-time_remaining = 60*3+30
+total = 0
+limit = 3 * 60 + 30
 
-for T, Z in map(lambda x: (int(x[0]),x[1]), map(str.split, sys.stdin)):
-
-    time_remaining -= T
-
-    if time_remaining <= 0: break
-
+for line in sys.stdin:
+    time, Z = line.strip().split() 
+    time = int(time)
     if Z == 'T':
-        current_player = (current_player % 8) + 1
+        if total + time > limit:
+            break
+        total += time
+        K = (K + 1) % 7
+    elif Z in ['N','P']:
+        if total + time > limit:
+            break
+        total += time
 
-
-print(current_player)
+print players[K]
